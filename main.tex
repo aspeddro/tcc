@@ -1,0 +1,205 @@
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% para impressão em recto e verso. Oposto a oneside
+	a4paper,			% tamanho do papel.
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	brazil,				% o último idioma é o principal do documento
+	]{article}
+\usepackage[brazil]{babel}
+\usepackage{xcolor}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+%\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage{hyperref}
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+\usepackage{mathptmx}
+\usepackage{geometry}
+\geometry{a4paper,left=3cm,right=2cm,top=3cm,bottom=2cm}
+\usepackage{indentfirst}
+\usepackage{sectsty}
+\usepackage{tabularx}
+
+%\usepackage{rotating}
+\usepackage{pdflscape}
+
+\sectionfont{\small}
+\subsectionfont{\small}
+
+\hypersetup{
+  colorlinks=true,
+  linkbordercolor=white,
+  linkcolor=black,
+  urlcolor=blue,
+  urlbordercolor=white, %links externos
+  citecolor=blue,
+  pdftitle={Projeto De Pesquisa, TCC},
+  pdfauthor={Pedro Victor de Sá Castro},
+  bookmarks=true
+}
+
+\usepackage[affil-it]{authblk}
+%\marginparwidth = 0pt
+%\hoffset = 0pt
+\title{Economia do Crime, surgimento e contribuições}
+\author{Pedro Victor de Sá Castro}
+\date{2025}
+
+\makeatletter
+
+% informações do PDF
+
+% ---
+% Espaçamentos entre linhas e parágrafos
+% ---
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+\renewcommand{\baselinestretch}{1.3}
+
+\pagenumbering{gobble}
+\begin{document}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=3cm]{uft_logo.png}
+\end{figure}
+
+\begin{center}
+	\uppercase{
+		Universidade Federal do Tocantins \\
+		Campus Universitário de Palmas \\
+		Curso de Ciências Econômicas \\
+	}
+	\vspace{1cm}
+	\MakeUppercase{\@author} \\
+	\vspace{3cm}
+	\MakeUppercase{\@title} \\
+	\vspace{\fill}
+	\MakeUppercase{Palmas -- TO \\ 2025}
+\end{center}
+
+\newpage
+\pagenumbering{arabic}
+\thispagestyle{empty}
+\begin{center}
+	\MakeUppercase{\@author} \\
+	\vspace*{\fill}
+	\MakeUppercase{\@title}
+	\vspace{1cm}
+	\begin{flushright}
+		\begin{minipage}{8cm}
+			Projeto de TCC apresentado ao Curso de Ciências Econômicas da Universidade Federal do Tocantins como parte do requisito da disciplina Técnica de Pesquisa do curso de Ciências Econômicas.  Orientador:
+		\end{minipage}
+	\end{flushright}
+	\vspace*{\fill}
+	\MakeUppercase{Palmas -- TO \\ 2025}
+\end{center}
+
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+
+\section{INTRODUÇÃO}
+
+% O que é o tema?
+% Na introdução o pesquisador deverá explicar o assunto que deseja desenvolver.
+% Desenvolver genericamente o tema
+% Anunciar a idéia básica
+% Delimitar o foco da pesquisa
+% Situar o tema dentro do contexto geral da sua área de trabalho
+% Descrever as motivações que levaram à escolha do tema
+% Definir o objeto de análise: O QUÊ SERÁ ESTUDADO ?
+
+\par
+A compreensão do crime e suas motivações ganhou espaço na ciência econômica a partir da segunda metade do século XX. Embora a ciência econômica seja conhecida por estudar agregados macroeconômicos, política fiscal, monetária, entre outras. O estudo do crime utilizando as ferramentas econômicos foi feito por \citeonline{becker1968crime}. A abordagem econômica traz novos conceitos para o estudo do comportamento criminoso, nele os criminosos são agentes racionais, portanto, cometem crime se custo-benefício for positivo. O principal objetivo é garantir a eficiência da política de segurança, minimizando danos sociais e gastos.
+
+%A compreensão do crime e suas motivações ganhou espaço na ciência econômica a partir da segunda metade do século XX. A abordagem econômica do crime traz elementos econômicos, principalmente ferramentas microeconômicas para análise do comportamento criminoso. O primeiro trabalho utilizando o arcabouço microeconômico foi realizado por \citeonline{becker1968crime}, nele o autor fundamenta o comportamento criminoso em conceitos econômicos, apresentando os determinante da oferta do crime. Segundo \citeauthor{becker1968crime} a pratica de um ato criminoso deriva basicamente de uma análise de custo e benefício, se a utilidade esperada do crime for maior que a utilidade obtida no mercado de trabalho legal o crime compensa. Na abordagem econômica, o criminoso é visto como um agente racional, maximizando utilidade sob incerteza. O modelo é uma marco na Economia do Crime.
+
+\par
+O problema da criminalidade e seu impacto é apresentado em diversos trabalhos, \cite{cerqueira2014crime} estima que o custo da violência no Brasil em 2007 representa R\$ 2,45 trilhões de reais à preços de janeiro de 2010, o equivalente segundo os autores a um custo anual de 2,3\% do PIB. O Brasil apresenta uma taxa de homicídio de 31,6 mortes para cada 100 mil habitantes de acordo com \cite{cerqueira2019atlas}. A distribuição dos homicídios no brasil afeta principalmente homens com cerca de 20 anos. As consequências também são observadas no âmbito macroeconômico, a perda de capital humano reduz o produto no longo prazo.
+
+\par
+Como demonstrado, a criminalidade tem efeito negativo na atividade econômica e na perca de bem-estar. Alto nível de criminalidade requer maiores gastos do governo na segurança e saúde do país, há custos públicos e privados. Garantir uma baixo nível de criminalidade, tolerável pela sociedade é o objetivo da autoridade pública de segurança, no entanto, existem restrições, a receita não é ilimitada, logo os gastos devem ser dirigidos de forma a minimizar o nível de criminalidade, gerar o maior benefício com o mínimo de desperdício. O surgimento da abordagem econômica do crime fornece alguns caminhos para melhorar o bem-estar da sociedade e como as autoridades podem realizar os gasto com maior eficiência.
+%O modelo apresenta as variáveis que afetam a oferta de crime, as que as autoridades podem controlar para diminuir o crime. A estrutura do modelo é uma otimização que busca minimizar a perda social dos crimes.
+
+\par O seguinte trabalho busca apresentar a evolução da abordagem econômica do crime, desde as contribuições que exerceram influência no trabalho de Becker, como Cesare Beccaria (1762-1776), como alguns fragmentos de Adam Smith sobre punições e criminalidade. Também será apresentado alguns trabalhos no período 1967--1977.
+%
+%Economistas estudam o comportamento humano através de modelos fundamentados, um deles é o comportamento do consumidor. O crime
+
+\section{OBJETIVOS}
+
+\subsection{Objetivos Geral}
+
+\par Analisar o surgimento da Economia do Crime, sua relevância para o entendimento do comportamento criminoso, assim como trabalhos relevantes para políticas públicas de segurança.
+
+
+\subsection{Objetivos Específicos}
+
+\begin{itemize}
+	\item Descreve a abordagem econômica do crime, quais variáveis afetam a criminalidade e como ciência econômica pode ajudar a entender o crime.
+	\item Analisar o modelo proposto por \citeonline{becker1968crime} e seu impacto na área.
+	\item Mapear alguns estudos no período 1967--1977
+\end{itemize}
+
+\section{METODOLOGIA}
+
+\par Foi utilizado uma abordagem qualitativa para compreender a Economia do Crime, suas principais características, surgimento, instrumentos utilizados e método. Primeiramente foi feito uma pesquisa bibliográfica sobre o tema e seus principais autores, analisando artigos e documentos sobre o tema, foram extraídos alguns artigos que estão presentes na Tabela 1. Após a pesquisa bibliográfica, foi feita uma leitura analítica de cada artigo/documento.
+
+\par Após a realização do leitura, será feito uma descrição do tema, seguindo uma linha temporal, começando por Adam Smith, depois será apresentado em mais detalhe o pensamento de Beccaria e suas contribuições no trabalho de Becker. Depois o modelo de Becker será descrito detalhadamente, assim como sua influência na área. Por fim será apresentado alguns estudos utilizando o arcabouço econômico no período 1967-1977.
+
+
+\section{REVISÃO DE LITERATURA}
+
+\par A revisão de literatura está presente na Tabela 1.
+
+\begin{landscape}
+\begin{table}[h]
+	\caption{Principais autores usados na revisão de literatura}
+\begin{tabularx}{26cm}{|X|X|X|X|X|}
+	\hline
+	Autor, Ano & Obra  & Objetivos & Metodologia & Achados/Resultados \\
+	\hline
+	\cite{conti2016historia} & A História do Pensamento Econômico sobre Crime e Punição de Adam Smith a Gary Becker: Parte I & Descreve a História do Pensamento Econômico sobre o Crime. Apresenta alguns fragmentos de Smith e Beccaria sobre o Crime e seus impactos na Fundamentação feita por Becker em 1968. & Pesquisa exploratória descritiva bibliográfica qualitativa  & Pensamento de Smith teve pouca contribuição na Abordagem Econômica do Crime. A abordagem de Beccaria desempenhou um papel maior no trabalho de Becker em 1968. \\
+	\hline
+	\cite{mijan2017} & Economia do Crime: As Contribuições de  Gary Becker, seu Desenvolvimento e Aplicações Atuais & Descreve as Contribuições de Becker e o Desenvolvimento da Abordagem Econômica do Crime & Pesquisa descritiva
+	bibliográfica & Apresenta as bases do arcabouço neoclássico. Descreve o modelo, as variáveis relevantes, os determinantes da oferta do crime e como as autoridades podem controlar a atividade criminal.  Apresenta o Estado das Artes da Economia do Crime, descreve diversos estudos sobre Crime e seus Impactos \\
+	\hline
+	\cite{becker1968crime} & Crime and punishment: An economic approach. & Aplica a Abordagem Econômica no comportamento criminoso & Pesquisa descritiva quantitativa & O comportamento criminoso é racional, qualquer indivíduo pode ser um criminoso, seus custos e benefícios determinam ser ele entra na atividade criminal. O objetivo da política pública de segurança é minimizar gastos e danos. \\
+	\hline
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\begin{table}[h]
+	\begin{tabularx}{26cm}{|X|X|X|X|X|}
+		\hline
+		\cite{cerqueira2019atlas} & Atlas da violência 2019. Instituto de Pesquisa
+		Econômica Aplicada (IPEA) & Avalia as estatística de violência no Brasil para 2019. & Pesquisa qualitativa quantitativa & O Brasil é um dos países com maior taxa de homicídios, aproximadamente 31,6 mortes para cada 100 mil. Os custos econômicos da violência representam 5,9\% do PIB. \\
+		\hline
+		\cite{odon2018} & Segurança pública e análise econômica do crime. O desenho de uma estratégia para a redução da criminalidade no Brasil & Realiza uma revisão da literatura sobre a análise econômica do crime e oferece caminhos para políticas de segurança pública. & Pesquisa descritiva quali-quanti descritiva bibliográfica & A restrição fiscal do governo limita os gastos com segurança pública. A política pública deve ter como perspectiva a alocação eficiente dos recursos. Política com maior potencial sobre a criminalidade devem ser priorizadas. \\
+		\hline
+		\cite{white2018neglected} & The neglected nuance of beccaria’s theory of punishment. & Apresenta as nuances da teoria de Beccaria sobre o Crime. & Pesquisa descritiva
+		quali-quanti & Beccaria é conhecido por ser um pioneiro da Economia do Crime em relação ao papel da dissuasão como principal meio de combate ao Crime. Um maior detalhamento dos escritos de Beccaria trazem maior compreensão sobre a abordagem econômica do crime. \\
+		\hline
+	\end{tabularx}
+\end{table}
+
+\end{landscape}
+
+\newpage
+\bibliography{bibliography}
+
+\end{document}
