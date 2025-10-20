@@ -18,8 +18,15 @@
 \usepackage{microtype} 			% para melhorias de justificação
 %\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
 \usepackage{hyperref}
-\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
-\usepackage{mathptmx}
+% \usepackage{abntex2}
+% \usepackage[alf]{abntex2cite}	% Citações padrão ABNT https://tug.ctan.org/macros/latex/contrib/abntex2/doc/abntex2cite.pdf
+% \usepackage[alf,abnt-etal-cite=5]{abntex2cite}	% Citacoes padrao ABNT
+\usepackage[style=abnt]{biblatex} % https://github.com/abntex/biblatex-abnt
+% full path works!!
+\addbibresource{~/Desktop/projects/trabalho-pedro/bibliography.bib}
+\addbibresource{bibliography.bib}
+
+% \usepackage{mathptmx} % Times Roman as default text
 \usepackage{geometry}
 \geometry{a4paper,left=3cm,right=2cm,top=3cm,bottom=2cm}
 \usepackage{indentfirst}
@@ -39,15 +46,23 @@
   urlcolor=blue,
   urlbordercolor=white, %links externos
   citecolor=blue,
-  pdftitle={Projeto De Pesquisa, TCC},
+  pdftitle={Trabalho},
   pdfauthor={Pedro Victor de Sá Castro},
   bookmarks=true
 }
 
+\usepackage[acronym]{glossaries}
+
+\makeglossaries
+
+\newacronym{pisa}{PISA}{Programa de Avaliação Internacional de Estudantes}
+\newacronym{ocde}{OCDE}{Organização para a Cooperação e Desenvolvimento Econômico}
+\newacronym{saeb}{SAEB}{Sistema de Avaliaçãoo da Educação Básica}
+
 \usepackage[affil-it]{authblk}
 %\marginparwidth = 0pt
 %\hoffset = 0pt
-\title{Economia do Crime, surgimento e contribuições}
+\title{XXX}
 \author{Pedro Victor de Sá Castro}
 \date{2025}
 
@@ -85,33 +100,62 @@
 	\vspace{3cm}
 	\MakeUppercase{\@title} \\
 	\vspace{\fill}
-	\MakeUppercase{Palmas -- TO \\ 2025}
+	Palmas, TO \\ 2025
 \end{center}
 
 \newpage
 \pagenumbering{arabic}
 \thispagestyle{empty}
 \begin{center}
-	\MakeUppercase{\@author} \\
+	\@author \\
 	\vspace*{\fill}
 	\MakeUppercase{\@title}
 	\vspace{1cm}
 	\begin{flushright}
 		\begin{minipage}{8cm}
-			Projeto de TCC apresentado ao Curso de Ciências Econômicas da Universidade Federal do Tocantins como parte do requisito da disciplina Técnica de Pesquisa do curso de Ciências Econômicas.  Orientador:
+                Monografia apresentada à Universidade Federal do Tocantins (UFT), Campus Universitário de Palmas para obtenção do título de bacharel em Ciências Econômicas
+                \newline
+                \newline
+                Orientador: Marcleiton Ribeiro Morais
 		\end{minipage}
 	\end{flushright}
 	\vspace*{\fill}
-	\MakeUppercase{Palmas -- TO \\ 2025}
+        Palmas, TO \\ 2025
 \end{center}
 
 \newpage
 \thispagestyle{empty}
+\begin{center}
+\section*{AGRADECIMENTOS}
+\end{center}
+
+Página para agradecimentos
+
+\newpage
+\thispagestyle{empty}
+\begin{center}
+\section*{RESUMO}
+\end{center}
+
+Resumo
+
+\newpage
+\thispagestyle{empty}
+\begin{center}
+\section*{ABSTRACT}
+\end{center}
+
+Abstract
+
+\newpage
+\thispagestyle{empty}
+% TODO: a palavra sumário deve ser centralizada
 \tableofcontents
 \newpage
 
+\printglossary[type=\acronymtype,title=Lista de abreviaturas e siglas]
 
-\section{INTRODUÇÃO}
+\newpage
 
 % O que é o tema?
 % Na introdução o pesquisador deverá explicar o assunto que deseja desenvolver.
@@ -122,84 +166,53 @@
 % Descrever as motivações que levaram à escolha do tema
 % Definir o objeto de análise: O QUÊ SERÁ ESTUDADO ?
 
-\par
-A compreensão do crime e suas motivações ganhou espaço na ciência econômica a partir da segunda metade do século XX. Embora a ciência econômica seja conhecida por estudar agregados macroeconômicos, política fiscal, monetária, entre outras. O estudo do crime utilizando as ferramentas econômicos foi feito por \citeonline{becker1968crime}. A abordagem econômica traz novos conceitos para o estudo do comportamento criminoso, nele os criminosos são agentes racionais, portanto, cometem crime se custo-benefício for positivo. O principal objetivo é garantir a eficiência da política de segurança, minimizando danos sociais e gastos.
 
-%A compreensão do crime e suas motivações ganhou espaço na ciência econômica a partir da segunda metade do século XX. A abordagem econômica do crime traz elementos econômicos, principalmente ferramentas microeconômicas para análise do comportamento criminoso. O primeiro trabalho utilizando o arcabouço microeconômico foi realizado por \citeonline{becker1968crime}, nele o autor fundamenta o comportamento criminoso em conceitos econômicos, apresentando os determinante da oferta do crime. Segundo \citeauthor{becker1968crime} a pratica de um ato criminoso deriva basicamente de uma análise de custo e benefício, se a utilidade esperada do crime for maior que a utilidade obtida no mercado de trabalho legal o crime compensa. Na abordagem econômica, o criminoso é visto como um agente racional, maximizando utilidade sob incerteza. O modelo é uma marco na Economia do Crime.
+\section{INTRODUÇÃO}
 
-\par
-O problema da criminalidade e seu impacto é apresentado em diversos trabalhos, \cite{cerqueira2014crime} estima que o custo da violência no Brasil em 2007 representa R\$ 2,45 trilhões de reais à preços de janeiro de 2010, o equivalente segundo os autores a um custo anual de 2,3\% do PIB. O Brasil apresenta uma taxa de homicídio de 31,6 mortes para cada 100 mil habitantes de acordo com \cite{cerqueira2019atlas}. A distribuição dos homicídios no brasil afeta principalmente homens com cerca de 20 anos. As consequências também são observadas no âmbito macroeconômico, a perda de capital humano reduz o produto no longo prazo.
-
-\par
-Como demonstrado, a criminalidade tem efeito negativo na atividade econômica e na perca de bem-estar. Alto nível de criminalidade requer maiores gastos do governo na segurança e saúde do país, há custos públicos e privados. Garantir uma baixo nível de criminalidade, tolerável pela sociedade é o objetivo da autoridade pública de segurança, no entanto, existem restrições, a receita não é ilimitada, logo os gastos devem ser dirigidos de forma a minimizar o nível de criminalidade, gerar o maior benefício com o mínimo de desperdício. O surgimento da abordagem econômica do crime fornece alguns caminhos para melhorar o bem-estar da sociedade e como as autoridades podem realizar os gasto com maior eficiência.
-%O modelo apresenta as variáveis que afetam a oferta de crime, as que as autoridades podem controlar para diminuir o crime. A estrutura do modelo é uma otimização que busca minimizar a perda social dos crimes.
-
-\par O seguinte trabalho busca apresentar a evolução da abordagem econômica do crime, desde as contribuições que exerceram influência no trabalho de Becker, como Cesare Beccaria (1762-1776), como alguns fragmentos de Adam Smith sobre punições e criminalidade. Também será apresentado alguns trabalhos no período 1967--1977.
+% Descrever um pouco a teoria do capital humano e seus principais autores
+% Descrever o papel do capital humano no desenvolvimento economico
+% Como a educação básica afeta o desenvolvimento economico
 %
-%Economistas estudam o comportamento humano através de modelos fundamentados, um deles é o comportamento do consumidor. O crime
 
+Um dos conceitos mais importantes no mercado de trabalho e que se torna mais recorrente é conhecido popularmente como a qualificação do trabalhador. Em economia é uma área de estudo que busca tentar explicar e entender como as habilidades e o conhecimento dos trabalhadores afeta os rendimentos e o crescimento de longo prazo de uma economia.
+
+\cite{AcemogluAutor_LecturesLaborEconomics} define em termos gerais que o capital humano é o estoque de conhecimento ou habilidades que o trabalhador possui, sendo adquiridos ou inatos e contribui para aumentar produtividade do trabalhador. Nas décadas de 1960 e 1970 os modelos de crescimento de longo prazo eram incapazes de explicar as distorções de crescimento das economias \cite{ChavesEtAl2019}. Gary Becker, um dos principais pioneiros no trabalho sobre capital humano no início de 1960 escreveu no prefácio do seu livro \citetitle{Becker1975_HumanCapital} que a motivação do estudo foi o crescimento substancial da renda nos Estados Unidos que não era explicado pelo capital físico e a mão de obra \cite[página 8]{Becker1975_HumanCapital}. Além de \citeauthor{Becker1975_HumanCapital}, Jacob Mincer e Theodore W. Schultz desenvolveram trabalhos demonstrando como o capital humano afeta o crescimento da renda.
+
+Becker considerou dois tipos de investimentos em capital humano: educação formal obtida através da escolaridade e a aprendizagem no trabalho \cite{Weiss2015_BeckerHumanCapital}. A educação formal é obtida principalmente no início da vida e desempenha um papel fundamental na renda no longo prazo. As evidências empíricas demonstram um convergência entre renda e investimento em capital humano. \cite{ChavesEtAl2019} apresenta as seguintes evidências: \cite{DiasMonteiroDiasRusso2013_FuncaoCapitalHumano} estima que a taxa de retorno é crescente no Brasil e para grande parte dos estados brasileiros a partir dos quatro anos de escolaridade. Os retornos crescentes são originados a partir da obtenção de graus mais elevados de educação, especialmente a conclusão do segundo e terceiro graus. \cite{LauJamisonLiuRivkin1993_EducationEconomicGrowthBrazil} mostra que um incremento em um ano de escolaridade na população ocupada aumenta a renda \textit{per capital} em 20\%. \cite{FragaBacha2013_AberturaCapitalHumanoCrescimento} ao analisar a relação entre capital humano e população empregada verificou que um aumento de uma ano no nível médio de escolaridade dos trabalhadores gera aumento entre 0,06 p.p. e 0,07 p.p. na taxa de crescimento do PIB \textit{per capita} dos estados brasileiros.
+
+Os estudos apontam para uma correlação positiva entre capital humano e renda. Atualmente o capital humano é amplamente reconhecido como um dos principais motores para o crescimento de longo prazo e da redução da pobreza. Ao melhorar suas competências, conhecimentos ou habilidades as pessoas se tornam mais produtivas e inovadoras. A mutabilidade do trabalho ao longo do tempo torna o investimento em capital humano um dos investimentos mais valioso.
+
+Como apontado por \citeauthor{Becker1975_HumanCapital}, a escolaridade é um dos investimentos em capital humano. Avaliações internacionais foram desenvolvidas para subsidiar políticas públicas. O \acrfull{pisa} coordenado pela \acrfull{ocde} é um dos mais conhecidos e busca avalicar o desempenho escolar dos alunos de 15 anos em matemática, ciências e leitura.
+
+Países também aplicam avaliações nacionais. No Brasil o \acrfull{saeb} é uma avaliação bianual que permite avaliar a educação básica brasileira. A avaliação é aplicada a cada dois anos na rede pública e na rede privada de forma amostral. O \acrshort{saeb} é aplicado no 2º, 5º, 9º ano do ensino fundamental e no ensino médio.
+
+A edição do \acrshort{saeb} de 2021 foi aplicado durante a pandemia de Covid-19 e os resultados de aprendizagem adequeada em língua portuguesa e matématica apresentaram uma queda em relação a 2019. No 2º ano a proficiência média em língua portuguesa caiu 24,1 pontos, de 750 para 725,9. Em matemática a queda foi de 8,4 pontos. No 5º ano a proficiência média caiu 7 pontos, em matemática a redução foi de 11 pontos. No 9º ano a proficiência em língua portuguesa caiu apenas 2 pontos e em matemática 7 pontos.
+
+O sistema educacional foi um dos mais afetados pela pandemia. 99,3\% das escolas brasileiras suspenderam as atividades presenciais e 90,1\% das escolas brasileiras que não retornaram às atividades presenciais no ano letivo de 2020 \cite{INEP2021_Covid19CensoEscolar2020}.
+
+A pandemia foi um choque negativo no desenvolvimento na aprendizagem de milhares de alunos no Brasil. As diferenças socioeconômicas no Brasil afetou os alunos de forma desigual.
+
+Esse trabalho busca avaliar como a pandemia afetou a aprendizagem dos alunos considerando a raça/cor e Unidade Federativa (UF).
+
+
+\newpage
 \section{OBJETIVOS}
 
 \subsection{Objetivos Geral}
-
-\par Analisar o surgimento da Economia do Crime, sua relevância para o entendimento do comportamento criminoso, assim como trabalhos relevantes para políticas públicas de segurança.
 
 
 \subsection{Objetivos Específicos}
 
 \begin{itemize}
-	\item Descreve a abordagem econômica do crime, quais variáveis afetam a criminalidade e como ciência econômica pode ajudar a entender o crime.
-	\item Analisar o modelo proposto por \citeonline{becker1968crime} e seu impacto na área.
-	\item Mapear alguns estudos no período 1967--1977
+	\item XX
+	\item XX
+	\item XX
 \end{itemize}
 
 \section{METODOLOGIA}
 
-\par Foi utilizado uma abordagem qualitativa para compreender a Economia do Crime, suas principais características, surgimento, instrumentos utilizados e método. Primeiramente foi feito uma pesquisa bibliográfica sobre o tema e seus principais autores, analisando artigos e documentos sobre o tema, foram extraídos alguns artigos que estão presentes na Tabela 1. Após a pesquisa bibliográfica, foi feita uma leitura analítica de cada artigo/documento.
-
-\par Após a realização do leitura, será feito uma descrição do tema, seguindo uma linha temporal, começando por Adam Smith, depois será apresentado em mais detalhe o pensamento de Beccaria e suas contribuições no trabalho de Becker. Depois o modelo de Becker será descrito detalhadamente, assim como sua influência na área. Por fim será apresentado alguns estudos utilizando o arcabouço econômico no período 1967-1977.
-
-
-\section{REVISÃO DE LITERATURA}
-
-\par A revisão de literatura está presente na Tabela 1.
-
-\begin{landscape}
-\begin{table}[h]
-	\caption{Principais autores usados na revisão de literatura}
-\begin{tabularx}{26cm}{|X|X|X|X|X|}
-	\hline
-	Autor, Ano & Obra  & Objetivos & Metodologia & Achados/Resultados \\
-	\hline
-	\cite{conti2016historia} & A História do Pensamento Econômico sobre Crime e Punição de Adam Smith a Gary Becker: Parte I & Descreve a História do Pensamento Econômico sobre o Crime. Apresenta alguns fragmentos de Smith e Beccaria sobre o Crime e seus impactos na Fundamentação feita por Becker em 1968. & Pesquisa exploratória descritiva bibliográfica qualitativa  & Pensamento de Smith teve pouca contribuição na Abordagem Econômica do Crime. A abordagem de Beccaria desempenhou um papel maior no trabalho de Becker em 1968. \\
-	\hline
-	\cite{mijan2017} & Economia do Crime: As Contribuições de  Gary Becker, seu Desenvolvimento e Aplicações Atuais & Descreve as Contribuições de Becker e o Desenvolvimento da Abordagem Econômica do Crime & Pesquisa descritiva
-	bibliográfica & Apresenta as bases do arcabouço neoclássico. Descreve o modelo, as variáveis relevantes, os determinantes da oferta do crime e como as autoridades podem controlar a atividade criminal.  Apresenta o Estado das Artes da Economia do Crime, descreve diversos estudos sobre Crime e seus Impactos \\
-	\hline
-	\cite{becker1968crime} & Crime and punishment: An economic approach. & Aplica a Abordagem Econômica no comportamento criminoso & Pesquisa descritiva quantitativa & O comportamento criminoso é racional, qualquer indivíduo pode ser um criminoso, seus custos e benefícios determinam ser ele entra na atividade criminal. O objetivo da política pública de segurança é minimizar gastos e danos. \\
-	\hline
-\end{tabularx}
-\end{table}
 
 \newpage
-
-\begin{table}[h]
-	\begin{tabularx}{26cm}{|X|X|X|X|X|}
-		\hline
-		\cite{cerqueira2019atlas} & Atlas da violência 2019. Instituto de Pesquisa
-		Econômica Aplicada (IPEA) & Avalia as estatística de violência no Brasil para 2019. & Pesquisa qualitativa quantitativa & O Brasil é um dos países com maior taxa de homicídios, aproximadamente 31,6 mortes para cada 100 mil. Os custos econômicos da violência representam 5,9\% do PIB. \\
-		\hline
-		\cite{odon2018} & Segurança pública e análise econômica do crime. O desenho de uma estratégia para a redução da criminalidade no Brasil & Realiza uma revisão da literatura sobre a análise econômica do crime e oferece caminhos para políticas de segurança pública. & Pesquisa descritiva quali-quanti descritiva bibliográfica & A restrição fiscal do governo limita os gastos com segurança pública. A política pública deve ter como perspectiva a alocação eficiente dos recursos. Política com maior potencial sobre a criminalidade devem ser priorizadas. \\
-		\hline
-		\cite{white2018neglected} & The neglected nuance of beccaria’s theory of punishment. & Apresenta as nuances da teoria de Beccaria sobre o Crime. & Pesquisa descritiva
-		quali-quanti & Beccaria é conhecido por ser um pioneiro da Economia do Crime em relação ao papel da dissuasão como principal meio de combate ao Crime. Um maior detalhamento dos escritos de Beccaria trazem maior compreensão sobre a abordagem econômica do crime. \\
-		\hline
-	\end{tabularx}
-\end{table}
-
-\end{landscape}
-
-\newpage
-\bibliography{bibliography}
+\printbibliography
 
 \end{document}
