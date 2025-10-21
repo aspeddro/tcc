@@ -51,10 +51,13 @@
   bookmarks=true
 }
 
+% center toc title https://tex.stackexchange.com/a/157410
+\usepackage{tocloft}
+\renewcommand\cfttoctitlefont{\hfill\normalsize\bfseries\MakeUppercase}
+\renewcommand\cftaftertoctitle{\hfill\mbox{}}
+
 \usepackage[acronym]{glossaries}
-
 \makeglossaries
-
 \newacronym{pisa}{PISA}{Programa de Avaliação Internacional de Estudantes}
 \newacronym{ocde}{OCDE}{Organização para a Cooperação e Desenvolvimento Econômico}
 \newacronym{saeb}{SAEB}{Sistema de Avaliaçãoo da Educação Básica}
@@ -155,7 +158,7 @@ Abstract
 \tableofcontents
 \newpage
 
-\printglossary[type=\acronymtype,title=Lista de abreviaturas e siglas]
+\printglossary[type=\acronymtype,title=\center{\MakeUppercase{Lista de abreviaturas e siglas}}]
 
 \newpage
 
@@ -201,7 +204,6 @@ no nível médio de escolaridade dos trabalhadores gera um acréscimo entre 0,06
 p.p. e 0,07 p.p. na taxa de crescimento do PIB \textit{per capita} dos estados
 brasileiros.
 
-Os estudos apontam para uma correlação positiva entre capital humano e renda.
 Atualmente, o capital humano é amplamente reconhecido como um dos principais
 motores do crescimento de longo prazo e da redução da pobreza. Ao melhorar suas
 competências, conhecimentos ou habilidades, as pessoas tornam-se mais produtivas
@@ -235,11 +237,32 @@ A pandemia representou um choque negativo no desenvolvimento da aprendizagem de
 milhares de alunos no Brasil. As diferenças socioeconômicas no país afetaram os
 estudantes de forma desigual.
 
-Este trabalho busca avaliar como a pandemia afetou a aprendizagem dos alunos,
-considerando raça/cor e Unidade Federativa (UF).
+% Dados:
+%   - SAEB de 2019 e 2021 do 5 e 9 ano
 
+% Hipótese: UFs que ofertaram aula assincrona e/ou que retornaram mais cedo com aulas presenciais apresentaram melhor resultado no SAEB em 2021?
+%   - Sinopse Estatística da Pesquisa Resposta Educacional à Pandemia de COVID-19 tem dados a nível de município
 
-\newpage
+% Para resolver:
+% Preciso escolher o grupo de controle e tratamento
+% As UFs precisam ter a mesma tendência no SAEB antes da pandemia.
+%   - Consigo usar municípios ao inves de UFs?
+% Como encontrar definir os municípios/UF do grupo de controle?
+%   - Os grupos (tratamento/controle) precisam ter evoluído de forma paralela antes da intervenção (hipótese de tendência no tempo comum)
+%   - Separar diretamente (mais simples):
+%       - Municípios/UFs que adoratam aula remota e retornaram mais cedo
+%       - Municípios/UFs que não adotaram aula remota e demoraram para retorna
+%   - Escolher municípios dentro da UF
+%       - Nesse caso eles teriam mais similiaridades (pib, gastos com educação,
+%         etc)
+%   - Propensity Score Matching (PSM)
+%       - https://dimewiki.worldbank.org/Propensity_Score_Matching
+%       - Estima a probabilidade de um município ser tratado com base em
+%         variáveis pré-tratamento, e emparelha municípios com propensity
+%         score semelhante.
+%           - As variáveis seriam: pib per capital, gasto com educação,
+%             ideb (o ideb usa a nota SAEB e o fluxo escolar)
+
 \section{OBJETIVOS}
 
 \subsection{Objetivos Geral}
@@ -257,6 +280,5 @@ considerando raça/cor e Unidade Federativa (UF).
 
 
 \newpage
-\printbibliography
-
+\printbibliography[title={\centering\MakeUppercase{Referências}}]
 \end{document}

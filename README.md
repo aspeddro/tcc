@@ -24,4 +24,5 @@ Referencial clássico:
 
 - [Divulgados dados sobre impacto da pandemia na educação](https://www.gov.br/inep/pt-br/centrais-de-conteudo/noticias/censo-escolar/divulgados-dados-sobre-impacto-da-pandemia-na-educacao)
 - [Sinopse Estatística da Pesquisa Resposta Educacional à Pandemia de COVID-19](https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-escolar/resultados)
+  - [Raw data](https://download.inep.gov.br/dados_abertos/sinopses_estatisticas/sinopses_estatisticas_pesquisa_covid19_censo_escolar_2021.zip)
 - [Resposta Educacional à Pandemia de Covid-19 no Brasil](https://download.inep.gov.br/censo_escolar/resultados/2020/apresentacao_pesquisa_covid19_censo_escolar_2020.pdf)
