@@ -1,0 +1,16 @@
+dictionaries = [
+    "pt_br",
+    "en_us",
+]
+words = [
+    "abntex",
+    "acemoglu",
+    "bacha",
+    "tcc",
+]
+ignore_paths = ["codebook.toml"]
+ignore_patterns = [
+    'https?://[^\s]+',
+    '\\\w+',
+]
+use_global = false
