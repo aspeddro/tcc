@@ -43,7 +43,9 @@
 *.xml
 *blx.bib
 *.toc.old
+*-SAVE-ERROR
 .bak
 .mtc
 build/
 raw_data/
+__pycache__
