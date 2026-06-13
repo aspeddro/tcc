@@ -47,5 +47,6 @@
 .bak
 .mtc
 build/
-raw_data/
+tmp/
 __pycache__
+raw_data/sinopses_estatisticas_pesquisa_covid19_censo_escolar_2020/

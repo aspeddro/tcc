@@ -36,6 +36,9 @@
 %\usepackage{rotating}
 \usepackage{pdflscape}
 
+% required to render output/regression_results.tex
+\usepackage{booktabs}
+
 \sectionfont{\small}
 \subsectionfont{\small}
 
@@ -67,7 +70,7 @@
 %\hoffset = 0pt
 \title{XXX}
 \author{Pedro Victor de Sá Castro}
-\date{2025}
+\date{2026}
 
 \makeatletter
 
@@ -103,7 +106,7 @@
 	\vspace{3cm}
 	\MakeUppercase{\@title} \\
 	\vspace{\fill}
-	Palmas, TO \\ 2025
+	Palmas, TO \\ 2026
 \end{center}
 
 \newpage
@@ -125,7 +128,7 @@
 		\end{minipage}
 	\end{flushright}
 	\vspace*{\fill}
-        Palmas, TO \\ 2025
+        Palmas, TO \\ 2026
 \end{center}
 
 \newpage
@@ -224,42 +227,6 @@ apresentados os resultados as conclusões.
 
 
 \section{REFERENCIAL TEÓRICO} \label{sec:referencial}
-
-% Recapitular a teoria do capital humano
-% Becker, Schultz, Mincer
-
-% Um dos conceitos mais importantes no mercado de trabalho e que se torna mais
-% recorrente é conhecido popularmente como a qualificação do trabalhador. Em
-% economia, é uma área de estudo que busca explicar e entender como as habilidades
-% e o conhecimento dos trabalhadores afetam os rendimentos e o crescimento de
-% longo prazo de uma economia.
-
-% \cite{AcemogluAutor_LecturesLaborEconomics} define, em termos gerais, que o
-% capital humano é o estoque de conhecimento ou de habilidades que o trabalhador
-% possui, sejam elas adquiridas ou inatas, e que contribui para aumentar a
-% produtividade do trabalhador. Nas décadas de 1960 e 1970 os modelos de
-% crescimento de longo prazo eram incapazes de explicar as distorções do
-% crescimento das economias \cite{ChavesEtAl2019}. Gary Becker, um dos principais
-% pioneiros no trabalho sobre capital humano, no início da década de 1960 escreveu
-% no prefácio do seu livro \citetitle{Becker1975_HumanCapital} que a motivação do
-% estudo foi o crescimento substancial da renda nos Estados Unidos, que não era
-% explicado apenas pelo capital físico e pela mão de obra \cite[página
-% 8]{Becker1975_HumanCapital}. Além de \citeauthor{Becker1975_HumanCapital}, Jacob
-% Mincer e Theodore W. Schultz desenvolveram trabalhos demonstrando como o capital
-% humano afeta o crescimento da renda.
-
-% Becker considerou dois tipos de investimentos em capital humano: educação
-% formal, obtida por meio da escolaridade, e aprendizagem no trabalho
-% \cite{Weiss2015_BeckerHumanCapital}. A educação formal é adquirida
-% principalmente no início da vida e desempenha papel fundamental na determinação
-% da renda no longo prazo. As evidências empíricas apontam para uma convergência
-% entre renda e investimento em capital humano.
-
-% No segundo capítulo do seu livro \citetitle{Becker1975_HumanCapital} na quarta
-% seção "Human Capital and Economic Development"
-% \textcite[24]{Becker1975_HumanCapital} descreve que a expansão do conhecimento
-% científico e técnico é a resposta para explicar o longo período de crescimento
-% persistente da renda por pessoa.
 
 % Novo conteúdo
 
@@ -381,7 +348,7 @@ prolongadas, baixa efetividade do ensino remoto, ou retornos presenciais
 tardios podem diminuir o acúmulo de capital humano, mesmo que os alunos
 permaneçam matriculados formalmente.
 
-\section{METODOLOGIA}
+\section{METODOLOGIA} \label{sec:metodologia}
 
 % Base de dados
 % Explicar o modelo, métodos
@@ -392,7 +359,8 @@ permaneçam matriculados formalmente.
 % Dados:
 %   - SAEB de 2019 e 2021 do 5 e 9 ano
 
-% Hipótese: Municípios/UFs que ofertaram aula assíncrona e/ou que retornaram mais cedo com aulas presenciais apresentaram melhor resultado no SAEB em 2021?
+% Hipótese: Municípios/UFs que ofertaram aula assíncrona e/ou que retornaram
+% mais cedo com aulas presenciais apresentaram melhor resultado no SAEB em 2021?
 %   - Sinopse Estatística da Pesquisa Resposta Educacional à Pandemia de COVID-19 tem dados a nível de município
 
 % Para resolver:
@@ -416,8 +384,194 @@ permaneçam matriculados formalmente.
 %           - As variáveis seriam: pib per capital, gasto com educação,
 %             Ideb (o Ideb usa a nota SAEB e o fluxo escolar)
 
+Esta pesquisa utiliza uma estratégia quantitativa para investigar se a ausência
+de estratégias não presenciais de ensino durante a pandemia de Covid-19 esteve
+associada a perdas adicionais de aprendizagem nos municípios brasileiros. A
+análise combina informações da pesquisa \textit{Resposta Educacional à Pandemia
+de Covid-19 no Brasil}, do Censo Escolar, com dados de desempenho do
+\acrshort{saeb} e indicadores socioeconômicos municipais anteriores à pandemia.
+O objetivo empírico é comparar a evolução do desempenho escolar de municípios
+com diferentes respostas educacionais antes e depois do choque provocado pela
+pandemia.
 
+A unidade de análise adotada é o município ao longo do tempo. A escolha do nível
+municipal decorre de duas razões. Primeiro, a sinopse estatística da resposta
+educacional à pandemia disponibiliza informações agregadas por município,
+localização e dependência administrativa. Segundo, a utilização de municípios,
+em vez de apenas unidades da federação, aumenta o número de observações e
+permite explorar maior variação nas estratégias adotadas pelas redes de ensino.
 
+\subsection{Base de dados}
+
+A principal fonte para identificar as estratégias educacionais adotadas durante
+a pandemia é a Sinopse Estatística da Pesquisa \textit{Resposta Educacional à
+Pandemia de Covid-19}, divulgada pelo Inep a partir do Censo Escolar da
+Educação Básica \cite{INEP2021_Covid19CensoEscolar2020}. A base utilizada é a
+planilha de estabelecimentos de ensino, especificamente a aba ``1.1 a 1.3'',
+que contém informações sobre ajustes no calendário escolar, suspensão das
+atividades presenciais e realização de atividades de ensino-aprendizagem não
+presenciais.
+
+O tratamento da planilha segue quatro etapas. Primeiro, o arquivo em formato
+\texttt{xlsx} é carregado no Python com a biblioteca \texttt{pandas}, ignorando
+as linhas iniciais de cabeçalho da sinopse. Em seguida, o código do município
+(\texttt{CO\_MUNICIPIO}) é convertido para formato numérico inteiro, permitindo
+a compatibilização com as demais bases municipais. Depois, são mantidas apenas
+as observações com município identificado, localização total
+(\texttt{TP\_LOCALIZACAO = Total}) e dependências administrativas
+desagregadas, excluindo as linhas agregadas ``Total'' e ``Pública'' porque
+queremos analisar redes desagregadas. Por fim,
+utiliza-se a variável \texttt{PERC\_QUEST\_3\_S}, que informa o percentual de
+escolas que responderam afirmativamente à pergunta sobre adoção de estratégias
+não presenciais durante o período de suspensão das atividades presenciais.
+Todo o processo de tratamento está disponível em \href{https://github.com/aspeddro/tcc-economia}{https://github.com/aspeddro/tcc-economia}
+
+Com base nessa variável, define-se o grupo de tratamento como o conjunto de
+municípios em que menos de 20\% das escolas da dependência administrativa
+observada declararam ter adotado estratégias não presenciais de
+ensino-aprendizagem. Esse critério identifica 58 municípios. Assim, neste
+trabalho, o indicador de tratamento representa uma exposição negativa: estar no
+grupo tratado significa pertencer ao conjunto de municípios com baixa adoção,
+ou ausência quase generalizada, de estratégias não presenciais. O grupo de
+controle é composto pelos demais municípios, isto é, aqueles em que a proporção
+de escolas que adotaram estratégias não presenciais foi igual ou superior ao
+limite definido.
+
+Os resultados educacionais são obtidos a partir dos dados municipais do
+\acrshort{saeb}, disponibilizados via \textcite{Base_dos_Dados}. A variável
+dependente principal é a proficiência média em Língua Portuguesa, calculada como
+a média das notas do $5^{o}$ e do $9^{o}$ anos do ensino fundamental, para a
+as redes federal, estadual, municipal e privada e localização total. A opção por agregar
+$5^{o}$ e $9^{o}$ anos busca captar uma medida sintética do desempenho no ensino
+fundamental, reduzindo a dependência de resultados de apenas uma etapa escolar.
+A análise considera 2021 como período pós-tratamento, pois corresponde à edição
+do \acrshort{saeb} aplicada após o choque pandêmico e durante o processo de
+retomada das atividades presenciais.
+
+\subsection{Estratégia empírica}
+
+A estratégia empírica utiliza o método de diferenças em diferenças
+(\textit{difference-in-differences}, DiD). Esse método compara a variação do
+desempenho escolar antes e depois da pandemia entre dois grupos: municípios com
+baixa adoção de estratégias não presenciais e municípios que adotaram algum grau
+de resposta educacional não presencial. A ideia central é que, se os dois grupos
+apresentavam trajetórias semelhantes antes da pandemia, a diferença entre suas
+variações após o choque pode ser interpretada como o efeito relativo da baixa
+adoção de estratégias educacionais.
+
+O modelo básico estimado é dado por:
+
+\begin{equation}
+Y_{it} = \beta_0 + \beta_1 D_i + \beta_2 P_t +
+\beta_3(D_i \times P_t) + \varepsilon_{it}
+\end{equation}
+
+em que $Y_{it}$ representa a proficiência média no \acrshort{saeb} do município
+$i$ no ano $t$; $D_i$ é uma variável binária dada por:
+% igual a 1 para municípios com
+% menos de 20\% das escolas adotando estratégias não presenciais e 0 para os
+% demais;
+
+\begin{equation}
+ D_{i} = \left\{
+ \begin{array}{rl}
+  1 & \text{\parbox{10cm}{para municípios com menos de 20\% das escolas adotando estratégias, isto é, considerado sem estratégia, representa o grupo de tratamento}} \\
+  \\
+  0 & \text{caso contrário}
+ \end{array}
+ \right.
+\end{equation}
+
+$P_t$ é uma variável binária
+igual a 1 no período pós-pandemia, definido pela edição de 2021 do
+\acrshort{saeb}; e $D_i \times P_t$ é o termo de interação que identifica o
+estimador de diferenças em diferenças. O termo $\varepsilon_{it}$ representa os
+fatores não observados que afetam o desempenho municipal.
+
+O coeficiente de interesse é $\beta_3$. Ele mede a diferença entre a variação
+do desempenho dos municípios tratados e a variação do desempenho dos municípios
+de controle:
+
+\begin{equation}
+\beta_3 =
+(\overline{Y}_{T,2021} - \overline{Y}_{T,pre}) -
+(\overline{Y}_{C,2021} - \overline{Y}_{C,pre})
+\end{equation}
+
+em que $T$ indica o grupo tratado, $C$ indica o grupo de controle e $pre$
+representa o período anterior à pandemia. Como o tratamento é definido pela
+baixa adoção de estratégias não presenciais, um coeficiente $\beta_3$ negativo
+indica que os municípios tratados tiveram perda adicional de proficiência em
+relação aos municípios com maior adoção de estratégias. Um coeficiente positivo
+indicaria melhora relativa do grupo tratado, resultado que seria contrário à
+hipótese principal do trabalho.
+
+\section{Resultados}
+
+Esta seção apresenta os resultados da análise descritiva das tendências e da
+estimação do modelo de diferenças em diferenças por Mínimos Quadrados
+Ordinários. A variável dependente é a nota média de Língua Portuguesa no
+\acrshort{saeb}, calculada a partir das médias do $5^{o}$ e do $9^{o}$ anos do
+ensino fundamental. O grupo tratado corresponde aos municípios com baixa adoção
+de estratégias não presenciais durante a suspensão das aulas presenciais.
+
+A Figura \ref{fig:tendencias_paralelas} apresenta a evolução da nota média do
+\acrshort{saeb} para os municípios com e sem estratégias não presenciais. O
+primeiro resultado visual é a existência de uma diferença persistente de nível
+entre os grupos: os municípios classificados como sem estratégia apresentam
+desempenho médio inferior ao dos municípios com estratégia em todos os anos
+observados. Essa diferença anterior ao período pandêmico é relevante, pois
+indica que os grupos não eram equivalentes antes do choque da Covid-19.
+
+Apesar dessa diferença de nível, a trajetória das séries sugere que ambos os
+grupos apresentaram movimentos semelhantes em parte do período anterior à
+pandemia, com crescimento das médias até 2019. Em 2021, primeiro ano observado
+após o início da pandemia, há queda nas duas séries, mas a redução é mais
+acentuada no grupo sem estratégia. Esse comportamento é compatível com a
+hipótese de que a baixa adoção de estratégias não presenciais esteve associada
+a perdas adicionais de aprendizagem. Ao mesmo tempo, a distância persistente
+entre os grupos recomenda cautela na interpretação causal dos resultados.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\textwidth]{output/tendencias_paralelas.png}
+    \caption{Evolução da nota média SAEB em língua portuguesa ($5^{o}$ e $9^{o}$) ao longo dos anos}
+    \label{fig:tendencias_paralelas}
+\end{figure}
+
+\begin{table}[htbp]
+\caption{Resultado do modelo de diferenças em diferenças \label{tab:resultado_did}}
+\footnotesize
+\input{output/regression_results.tex}
+\end{table}
+
+A Tabela \ref{tab:resultado_did} apresenta o resultado do modelo em níveis. O
+coeficiente da variável \texttt{sem\_estrategia} é negativo e estatisticamente
+significativo, igual a -19,7651. Esse resultado indica que, antes de considerar
+o efeito específico de 2021, os municípios classificados no grupo sem estratégia
+já apresentavam média do \acrshort{saeb} cerca de 19,76 pontos inferior à dos
+municípios do grupo de controle. Portanto, parte importante da diferença entre
+os grupos é anterior à pandemia e provavelmente está associada a características
+socioeconômicas, administrativas e educacionais distintas.
+
+O coeficiente da variável \texttt{pos} é positivo, igual a 0,8518, e
+estatisticamente significativo. Esse coeficiente representa a variação média do
+grupo de controle no período identificado como pós-tratamento, mantendo fixa a
+diferença média entre tratados e controles. Já o coeficiente de interesse é o
+termo de interação \texttt{did}, estimado em -4,0563, com p-valor de 0,023.
+Como o coeficiente é negativo e significativo ao nível de 5\%, o resultado
+indica que os municípios sem estratégia tiveram uma queda adicional de
+aproximadamente 4,05 pontos no \acrshort{saeb} em relação aos municípios com
+estratégia.
+
+Esse resultado é compatível com a hipótese central do trabalho: municípios com
+baixa adoção de estratégias não presenciais durante a pandemia apresentaram pior
+evolução relativa de desempenho. No entanto, a magnitude e a significância do
+coeficiente \texttt{sem\_estrategia} mostram que os grupos já eram bastante
+diferentes antes da pandemia. Assim, o coeficiente de diferenças em diferenças
+deve ser interpretado com cautela.
+
+\section{Conclusão}
 
 \newpage
 \printbibliography[title={\centering\MakeUppercase{Referências}}]

@@ -1,13 +1,16 @@
 from pathlib import Path
-import numpy as np
-import pandas as pd
+
 import basedosdados as bd
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 import statsmodels.formula.api as smf
 
+# Caminho onde os dados brutos estão salvos
 raw_data = Path("raw_data")
 
-df_raw: pd.DataFrame = pd.read_excel(
+# Ler a planilha, o resultado é um dataframe
+df_raw = pd.read_excel(
     raw_data
     / "sinopses_estatisticas_pesquisa_covid19_censo_escolar_2020"
     / "Sinopse_Estatistica_do_Questionario_Resposta_Educacional_a_Pandemia_de_Covid_19_no Brasil_EducaЗ╞o_Brasica.xlsx",
@@ -20,19 +23,21 @@ df_raw["CO_MUNICIPIO"] = df_raw["CO_MUNICIPIO"].astype("Int64")
 df_raw["TP_LOCALIZACAO"].unique()
 df_raw["TP_DEPENDENCIA"].unique()
 
+# Vamos manter apenas municípios válidos, isto é, onde CO_MUNICIPIO não é null/na
+# Mantem apenas linhas onde localização é Total e remove linhas onde a dependência
+# é Total ou Pública
 df = df_raw.loc[
     (df_raw["CO_MUNICIPIO"].notna())
     & (df_raw["TP_LOCALIZACAO"] == "Total")
     & (~df_raw["TP_DEPENDENCIA"].isin(["Total", "Pública"]))
 ]
 
-# Durante o período de suspensão das atividades presenciais de ensino-aprendizagem, a escola adotou estratégias não presenciais de ensino?
+# Durante o período de suspensão das atividades presenciais de ensino-aprendizagem,
+# a escola adotou estratégias não presenciais de ensino?
 # Não em percentual
-counts, bin_edges = np.histogram(df["PERC_QUEST_3_N"].dropna(), bins=10)  # type: ignore
+counts, bin_edges = np.histogram(df["PERC_QUEST_3_N"].dropna(), bins=10)
 for i in range(len(counts)):
     print(f"({bin_edges[i]}, {bin_edges[i + 1]}]: {counts[i]}")
-
-df["TP_DEPENDENCIA"].unique()
 
 # 90% ou + das escolas não adotaram medida não presencial
 # Esse df tem municípios onde 90% ou + das escolas não aplicaram estrategia
@@ -233,7 +238,7 @@ df_variaveis = bd.read_sql(
             atu_ef as aluno_turma,
             dsu_ef as perc_docente_superior
         from `basedosdados.br_inep_indicadores_educacionais.municipio`
-        where ano = 2019        
+        where ano = 2019
         and rede in ('federal', 'estadual', 'municipal', 'privada') and localizacao = 'total'
     ),
     inse as (
@@ -249,7 +254,7 @@ df_variaveis = bd.read_sql(
         end as rede,
         inse
       from basedosdados.br_inep_indicador_nivel_socioeconomico.municipio
-      where ano = 2019 
+      where ano = 2019
       and rede in ("1", "2", "3", "4")
       and tipo_localizacao = "0" -- Total
     ),
@@ -304,7 +309,7 @@ from
             valor_despesas_educacao_pc as valor_despesas_educacao_pc
             on ideb.ano = valor_despesas_educacao_pc.ano
             and ideb.id_municipio = valor_despesas_educacao_pc.id_municipio
-            -- and ideb.rede = valor_despesas_educacao_pc.rede 
+            -- and ideb.rede = valor_despesas_educacao_pc.rede
         join
             prop_internet as prop_internet
             on ideb.ano = prop_internet.ano
@@ -342,9 +347,9 @@ df_variaveis["rede"] = df_variaveis["rede"].replace(
 # A coluna tratamento marca os municipios/rede que não aplicaram
 # estrategia. Embora possa parecer contraditório
 df_variaveis["tratamento"] = df_variaveis["id_municipio"].apply(
-    lambda v: 1
-    if v in df_municipios_sem_estrategia["CO_MUNICIPIO"].values.tolist()
-    else 0
+    lambda v: (
+        1 if v in df_municipios_sem_estrategia["CO_MUNICIPIO"].values.tolist() else 0
+    )
 )
 
 df_saeb_lp = bd.read_sql(
@@ -355,7 +360,7 @@ select
     round(avg(media), 2) as media, -- Média para o 5 e 9 ano
 from basedosdados.br_inep_saeb.municipio
 where localizacao = "total"
-    and serie in (5, 9) 
+    and serie in (5, 9)
     and rede in ("total - estadual e municipal") -- ("federal", "estadual", "municipal", "privada")
     and disciplina = "LP"
 group by ano, id_municipio""",
@@ -366,9 +371,9 @@ group by ano, id_municipio""",
 df_saeb_lp["id_municipio"] = df_saeb_lp["id_municipio"].astype("Int64")
 
 df_saeb_lp["sem_estrategia"] = df_saeb_lp["id_municipio"].apply(
-    lambda v: 1
-    if v in df_municipios_sem_estrategia["CO_MUNICIPIO"].values.tolist()
-    else 0
+    lambda v: (
+        1 if v in df_municipios_sem_estrategia["CO_MUNICIPIO"].values.tolist() else 0
+    )
 )
 
 df_saeb_lp["sem_estrategia"].value_counts(dropna=False)
@@ -507,8 +512,6 @@ modelo1 = modelo_did_basico(df_saeb_lp)
 # 2. Em média, houve melhora de 1.57 pontos de 2019 para 2021 (pos = +1.57)
 #   - Recuperação pós retorno presencial
 # 3. Municípios SEM estratégias tiveram queda ADICIONAL de 3.25 pontos no SAEB em relação aos municípios COM estratégias. (did = -3.25)
-
-
 
 
 from linearmodels.panel import PanelOLS
