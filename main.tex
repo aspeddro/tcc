@@ -439,7 +439,7 @@ limite definido.
 
 Os resultados educacionais são obtidos a partir dos dados municipais do
 \acrshort{saeb}, disponibilizados via \textcite{Base_dos_Dados}. A variável
-dependente principal é a proficiência média em Língua Portuguesa, calculada como
+dependente principal é a proficiência média em Língua Portuguesa e Matemática, calculada como
 a média das notas do $5^{o}$ e do $9^{o}$ anos do ensino fundamental, para a
 as redes federal, estadual, municipal e privada e localização total. A opção por agregar
 $5^{o}$ e $9^{o}$ anos busca captar uma medida sintética do desempenho no ensino
@@ -509,67 +509,95 @@ hipótese principal do trabalho.
 \section{Resultados}
 
 Esta seção apresenta os resultados da análise descritiva das tendências e da
-estimação do modelo de diferenças em diferenças por Mínimos Quadrados
-Ordinários. A variável dependente é a nota média de Língua Portuguesa no
-\acrshort{saeb}, calculada a partir das médias do $5^{o}$ e do $9^{o}$ anos do
-ensino fundamental. O grupo tratado corresponde aos municípios com baixa adoção
-de estratégias não presenciais durante a suspensão das aulas presenciais.
+estimação do modelo de diferenças em diferenças para Língua Portuguesa e Matemática.
+Em ambos os casos, a variável dependente é a nota média municipal no \acrshort{saeb},
+calculada a partir das médias do $5^{o}$ e do $9^{o}$ anos do ensino fundamental.
+O grupo tratado corresponde aos municípios com baixa adoção de estratégias não
+presenciais durante a suspensão das aulas presenciais.
 
-A Figura \ref{fig:tendencias_paralelas} apresenta a evolução da nota média do
-\acrshort{saeb} para os municípios com e sem estratégias não presenciais. O
-primeiro resultado visual é a existência de uma diferença persistente de nível
-entre os grupos: os municípios classificados como sem estratégia apresentam
-desempenho médio inferior ao dos municípios com estratégia em todos os anos
-observados. Essa diferença anterior ao período pandêmico é relevante, pois
-indica que os grupos não eram equivalentes antes do choque da Covid-19.
+As Figuras \ref{fig:tendencias_paralelas_lp} e \ref{fig:tendencias_paralelas_mt}
+apresentam a evolução das notas médias para Língua Portuguesa e Matemática,
+respectivamente. Em ambas as disciplinas, os municípios classificados como sem
+estratégia apresentam desempenho médio inferior ao dos municípios com estratégia
+em todos os anos observados. Essa diferença persistente de nível indica que os
+grupos já eram distintos antes da pandemia, o que recomenda cautela na interpretação
+causal dos resultados.
 
-Apesar dessa diferença de nível, a trajetória das séries sugere que ambos os
-grupos apresentaram movimentos semelhantes em parte do período anterior à
-pandemia, com crescimento das médias até 2019. Em 2021, primeiro ano observado
-após o início da pandemia, há queda nas duas séries, mas a redução é mais
-acentuada no grupo sem estratégia. Esse comportamento é compatível com a
-hipótese de que a baixa adoção de estratégias não presenciais esteve associada
-a perdas adicionais de aprendizagem. Ao mesmo tempo, a distância persistente
-entre os grupos recomenda cautela na interpretação causal dos resultados.
+Apesar dessa diferença, as séries apresentam movimentos semelhantes em parte do
+período anterior ao choque, com aumento das médias até 2019. Em 2021, primeiro
+ano observado após o início da pandemia, há queda nas duas disciplinas e nos
+dois grupos. A queda é visualmente mais acentuada no grupo sem estratégia, tanto
+em Língua Portuguesa quanto em Matemática. Esse padrão é compatível com a
+hipótese de que a baixa adoção de estratégias não presenciais esteve associada a
+perdas adicionais de aprendizagem.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=1.0\textwidth]{output/tendencias_paralelas.png}
-    \caption{Evolução da nota média SAEB em língua portuguesa ($5^{o}$ e $9^{o}$) ao longo dos anos}
-    \label{fig:tendencias_paralelas}
+    \includegraphics[width=1.0\textwidth]{output/tendencias_paralelas_lp.png}
+    \caption{Evolução da nota média do \acrshort{saeb} em Língua Portuguesa ($5^{o}$ e $9^{o}$ anos)}
+    \label{fig:tendencias_paralelas_lp}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\textwidth]{output/tendencias_paralelas_mt.png}
+    \caption{Evolução da nota média do \acrshort{saeb} em Matemática ($5^{o}$ e $9^{o}$ anos)}
+    \label{fig:tendencias_paralelas_mt}
 \end{figure}
 
 \begin{table}[htbp]
-\caption{Resultado do modelo de diferenças em diferenças \label{tab:resultado_did}}
+\caption{Resultado do modelo de diferenças em diferenças para Língua Portuguesa \label{tab:resultado_did_lp}}
 \footnotesize
-\input{output/regression_results.tex}
+\input{output/regression_results_lp.tex}
 \end{table}
 
-A Tabela \ref{tab:resultado_did} apresenta o resultado do modelo em níveis. O
-coeficiente da variável \texttt{sem\_estrategia} é negativo e estatisticamente
-significativo, igual a -19,7651. Esse resultado indica que, antes de considerar
-o efeito específico de 2021, os municípios classificados no grupo sem estratégia
-já apresentavam média do \acrshort{saeb} cerca de 19,76 pontos inferior à dos
-municípios do grupo de controle. Portanto, parte importante da diferença entre
-os grupos é anterior à pandemia e provavelmente está associada a características
-socioeconômicas, administrativas e educacionais distintas.
+A Tabela \ref{tab:resultado_did_lp} apresenta o resultado do modelo para Língua
+Portuguesa. O coeficiente da variável \texttt{sem\_estrategia} é negativo e
+estatisticamente significativo, igual a -19,7651. Isso indica que, antes de
+considerar o efeito específico de 2021, os municípios classificados no grupo sem
+estratégia já apresentavam média cerca de 19,77 pontos inferior à dos municípios
+do grupo de controle.
 
 O coeficiente da variável \texttt{pos} é positivo, igual a 0,8518, e
 estatisticamente significativo. Esse coeficiente representa a variação média do
-grupo de controle no período identificado como pós-tratamento, mantendo fixa a
-diferença média entre tratados e controles. Já o coeficiente de interesse é o
-termo de interação \texttt{did}, estimado em -4,0563, com p-valor de 0,023.
-Como o coeficiente é negativo e significativo ao nível de 5\%, o resultado
-indica que os municípios sem estratégia tiveram uma queda adicional de
-aproximadamente 4,05 pontos no \acrshort{saeb} em relação aos municípios com
-estratégia.
+grupo de controle no período pós-tratamento, mantendo fixa a diferença média
+entre tratados e controles. O coeficiente de interesse, associado ao termo
+\texttt{did}, é igual a -4,0563, com p-valor de 0,023. Como esse coeficiente é
+negativo e estatisticamente significativo ao nível de 5\%, o resultado sugere
+que os municípios sem estratégia tiveram perda adicional de aproximadamente
+4,06 pontos em Língua Portuguesa, em relação aos municípios com estratégia.
 
-Esse resultado é compatível com a hipótese central do trabalho: municípios com
-baixa adoção de estratégias não presenciais durante a pandemia apresentaram pior
-evolução relativa de desempenho. No entanto, a magnitude e a significância do
-coeficiente \texttt{sem\_estrategia} mostram que os grupos já eram bastante
-diferentes antes da pandemia. Assim, o coeficiente de diferenças em diferenças
-deve ser interpretado com cautela.
+\begin{table}[htbp]
+\caption{Resultado do modelo de diferenças em diferenças para Matemática \label{tab:resultado_did_mt}}
+\footnotesize
+\input{output/regression_results_mt.tex}
+\end{table}
+
+A Tabela \ref{tab:resultado_did_mt} apresenta o resultado do modelo para
+Matemática. Assim como em Língua Portuguesa, o coeficiente da variável
+\texttt{sem\_estrategia} é negativo e estatisticamente significativo, igual a
+-22,2245. Esse resultado indica que os municípios sem estratégia já apresentavam
+média cerca de 22,22 pontos inferior à dos municípios com estratégia antes de
+considerar o efeito específico do período pós-pandemia.
+
+O coeficiente da variável \texttt{pos} é negativo, igual a -3,0346, e
+estatisticamente significativo, indicando queda média no grupo de controle no
+período pós-tratamento. O coeficiente de interesse, \texttt{did}, é igual a
+-2,9667, com p-valor de 0,085. Portanto, o efeito estimado para Matemática
+também é negativo, indicando perda adicional de aproximadamente 2,97 pontos para
+os municípios sem estratégia. No entanto, esse resultado é estatisticamente
+significativo apenas ao nível de 10\%, e não a 5\%.
+
+Em conjunto, os resultados apontam para pior evolução relativa dos municípios
+com baixa adoção de estratégias não presenciais nas duas disciplinas analisadas.
+A evidência é mais forte para Língua Portuguesa, onde o coeficiente de diferenças
+em diferenças é significativo a 5\%. Em Matemática, o sinal do coeficiente é
+compatível com a hipótese do trabalho, mas a evidência estatística é mais fraca.
+Além disso, a magnitude dos coeficientes de \texttt{sem\_estrategia} confirma
+que os grupos já eram substancialmente diferentes antes da pandemia. Assim, os
+resultados devem ser interpretados como evidência de associação entre baixa
+adoção de estratégias educacionais e pior evolução do desempenho, com cautela
+quanto a uma interpretação causal forte.
 
 \section{Conclusão}
 
