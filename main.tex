@@ -25,6 +25,10 @@
 % \usepackage[alf,abnt-etal-cite=5]{abntex2cite}	% Citacões padrao ABNT
 \usepackage[style=abnt]{biblatex} % https://github.com/abntex/biblatex-abnt
 \bibliography{bibliography}
+\DeclareFieldFormat{url}{%
+  Disponível em\addcolon\space
+  \textless\url{#1}\textgreater%
+}
 
 % \usepackage{mathptmx} % Times Roman as default text
 \usepackage{geometry}
@@ -45,7 +49,10 @@
 \hypersetup{
   colorlinks=true,
   linkbordercolor=white,
-  linkcolor=black,
+  colorlinks=true,       	% false: boxed links; true: colored links
+  linkcolor=blue,         % color of internal links
+  citecolor=blue,        	% color of links to bibliography
+  filecolor=blue,      % color of file links
   urlcolor=blue,
   urlbordercolor=white, %links externos
   citecolor=blue,
@@ -176,8 +183,11 @@ Abstract
 
 \newpage
 \thispagestyle{empty}
-% TODO: a palavra sumário deve ser centralizada
+% TOC with black links
+{
+\hypersetup{linkcolor=black}
 \tableofcontents
+}
 \newpage
 
 \printglossary[type=\acronymtype,title=\center{\MakeUppercase{Lista de abreviaturas e siglas}}]
