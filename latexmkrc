@@ -17,3 +17,4 @@ sub run_makeglossaries {
 
     popd; # ... and cd-ing back again
 }
+$out_dir = 'build';

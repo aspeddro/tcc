@@ -16,14 +16,18 @@ Template UFT TCC 2022: https://docs.uft.edu.br/share/s/DWXEaPMESDeWuSg_KSrEYg
 
 ### Capital Humano
 
-- Economia da Educação, Rafael Terra: https://sites.google.com/site/rflterra/home/economia-da-educacao
-- A Relação da formação de capital humano com o desempenho econômico brasileiro: https://repositorio.ipea.gov.br/server/api/core/bitstreams/41bf00f5-8805-4ae4-bc5b-0406d34bea9c/content
-- Capital humano e crescimento econômico: https://www.scielo.br/j/inter/a/srrRFK6rcbj7gwW6GMyVNHK/?lang=pt&format=html
+- Economia da Educação, Rafael Terra:
+  https://sites.google.com/site/rflterra/home/economia-da-educacao
+- A Relação da formação de capital humano com o desempenho econômico brasileiro:
+  https://repositorio.ipea.gov.br/server/api/core/bitstreams/41bf00f5-8805-4ae4-bc5b-0406d34bea9c/content
+- Capital humano e crescimento econômico:
+  https://www.scielo.br/j/inter/a/srrRFK6rcbj7gwW6GMyVNHK/?lang=pt&format=html
 
 Referencial clássico:
 
 - Theodore W. Schultz – Investment in Human Capital (1961)
-- Theodore W. Schultz – Investment in Human Capital: The Role of Education and of Research (1971)
+- Theodore W. Schultz – Investment in Human Capital: The Role of Education and
+  of Research (1971)
 - Gary S. Becker – Human Capital: A Theoretical and Empirical Analysis
 
 ## Dados
